@@ -1,0 +1,25 @@
+@startuml
+hide empty members
+
+abstract class SliverGridDelegate {
+    +SliverGridLayout getLayout(SliverConstraints constraints)
+    +bool shouldRelayout(CustomGridDelegate oldDelegate)
+}
+class SliverGridDelegateWithFixedCrossAxisCount {}
+class SliverGridDelegateWithMaxCrossAxisExtent
+
+SliverGridDelegate <|-- SliverGridDelegateWithFixedCrossAxisCount
+SliverGridDelegate <|-- SliverGridDelegateWithMaxCrossAxisExtent
+
+abstract class SliverGridLayout {
+    +int getMinChildIndexForScrollOffset(double scrollOffset)
+    +int getMaxChildIndexForScrollOffset(double scrollOffset)
+    +SliverGridGeometry getGeometryForChildIndex(int index)
+    +double computeMaxScrollOffset(int childCount);
+}
+class SliverGridRegularTileLayout{}
+
+SliverGridLayout <|-- SliverGridRegularTileLayout
+
+class SliverGridGeometry
+@enduml
