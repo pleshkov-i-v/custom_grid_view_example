@@ -1,0 +1,3 @@
+class ItemsRepository {
+  const ItemsRepository();
+}
